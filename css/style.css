@@ -1,0 +1,603 @@
+body {
+  height:3800px;
+}
+
+/* 노멀라이즈 시작 */
+body , ul , li {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}
+
+/* 라이브러리 */
+.con {
+  width:1200px;
+  margin:0 auto;
+}
+
+/* 커스텀시작 */
+
+body {
+  color: #483834;
+  font-size: 11px;
+  font-family: "Nanum Barun Gothic", "나눔고딕", "NanumGothic", "돋움", "Dotum", sans-serif;
+  letter-spacing:-1.4px;
+}
+
+header{
+  min-width:1200px;
+  border-top:3px solid #ff7c98;
+  margin-top:2px;
+  border-bottom:1px solid #3f291a; background:url(http://www.baskinrobbins.co.kr/assets/images/common/bg_header.gif)
+}
+
+
+/* top header */
+
+header .top-header {
+  border-bottom: 1px solid #e2d9d6;
+}
+
+header .top-header .top-header__inner {
+/*   border: 3px solid red; */
+  height: 114px;
+  padding-top: 21px;
+  display:flex;
+  align-items:center;
+}
+
+.header__sns {
+/*   border:3px solid blue; */
+  flex: 1 1 0%;
+}
+
+.header__sns ul {
+  display:flex;
+  align-items:center;
+}
+
+.header__sns ul > li {
+  padding-right:10px;
+}
+
+.header__cs {
+/*   border:3px solid gold; */
+  flex :1 1 0%;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.header__cs ul {
+  display:flex;
+  align-items:center;
+}
+
+.header__cs ul > li {
+  padding-left:30px;
+}
+
+/* menu-header */
+
+.menu-header {
+  padding-top:14px;
+  padding-bottom:26px;
+  height:10px;
+  transition:0.5s;
+  overflow:hidden;
+/*   해피포인트 갇히도록 유령의 집 만들어주기 */
+  position:absolute;
+  width:100%;
+  z-index:101;
+  background-color:white;
+}
+
+.menu-header.on{
+  height:300px;
+  background-color:white;
+/*   border:3px solid red; */
+}
+
+.menu-header__inner {
+  display:flex;
+/*   border:3px solid blue; */
+  align-items:center;
+  background-color:white;
+}
+
+
+/* menu-header__member */
+
+.menu-header > .menu-header__inner > .con {
+/*   border:3px solid pink; */
+  display:flex;
+  align-items:center;
+}
+
+.menu-header__member > ul {
+/*   border:3px solid red; */
+  display:flex;
+}
+
+.menu-header__member > ul > li {
+/*   border:3px solid blue; */
+  padding-right:25px;
+  font-weight:bold;
+}
+
+.menu-header__member .join{
+  margin-top:2px;
+  margin-right:50px;
+}
+
+/* .menu-header__main-menu */
+
+.menu-header__main-menu {
+/*   border:3px solid black; */
+  flex-grow:1;
+}
+
+.menu-header__main-menu > ul {
+/*   border:3px solid green; */
+  display:flex;
+}
+
+.menu-header__main-menu > ul > li {
+  position:relative;
+}
+
+.menu-header__main-menu ul ul {
+/*   display:none; */
+  opacity:0;
+  visibility:hidden;
+  transition:0.5s;
+  position:absolute;
+  top:185%;
+  left:0;
+}
+
+.menu-header.on .menu-header__main-menu > ul > li > ul {
+  opacity:1;
+  visibility:visible; 
+}
+
+.menu-header__main-menu > ul > li {
+  flex-grow:1;
+  text-align:center;
+}
+
+/* 가운데 정렬이 되지 않는 경우 넓이 자체가 좁아서 그럴수 있으니 넓이 100%로 넓혀주고 가운데 정렬 시켜주기! */
+.menu-header__main-menu ul ul {
+/*   border:3px solid green; */
+  width:100%;
+}
+
+/* 이달의 맛 이미지 늦게 뜨게 하기 위해서 */
+
+.menu-header__main-menu ul ul > li > a > img{
+/*   border:3px solid black; */
+  transition:2s;
+  opacity:0;
+  visibility:hidden;
+}
+
+.menu-header:hover > .menu-header__inner > .con > .menu-header__main-menu ul ul > li > a > img {
+  opacity:1;
+  visibility:visible;
+}
+
+
+.menu-header__main-menu ul ul > li {
+  padding:10px 0;
+  font-size:0.8rem;
+  color:gray;
+}
+
+.menu-header__main-menu ul ul > li:hover {
+  color:pink;
+}
+
+.happypoint {
+/*   menu-header에 갇히도록 유령 만들기 */
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:260px; background:url("http://www.baskinrobbins.co.kr/assets/images/common/img_happypoint_app.jpg") no-repeat left bottom;
+}
+
+/* banner */
+.main-banner {
+  position:relative;
+  background-color:#f2cf01;
+  opacity:1;
+  visibility:visible;
+}
+
+.top-banner {
+/*   border:3px solid red; */
+  margin-top:56px;
+  background-color:#f2cf01;
+/*   베너 안의 img는 기본값 display:inline-block; 이기 때문에 text-align으로 가운데 정렬 */
+  text-align:center;
+  cursor:pointer;
+}
+
+.main-banner .flavor-banner {
+/*   border:3px solid red; */
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:100;
+}
+
+.main-banner .flavor-banner.active {  
+  opacity:0;
+  visibility:hidden;
+  transition:0.5s;
+}
+
+
+
+/* banner-slide */
+
+:root {
+  --swiper-theme-color :#301d17 !important;
+}
+
+.banner-slide .swiper {
+  height:697px;
+}
+
+.banner-slide .swiper-slide {
+  text-align:center;
+}
+
+.banner-slide .slide-1 {
+  background-color:#f2cf01;
+}
+
+.banner-slide .slide-2 {
+  background-color:#613aaf;
+}
+
+.banner-slide .slide-3 {
+  background-color:#e5e5e5;
+}
+
+.banner-slide .slide-4 {
+  background-color:#f16c83;
+}
+
+.banner-slide .slide-5 {
+  background-color:#f6f8f8;
+}
+
+.banner-slide .slide-6 {
+  background-color:#ffe103;
+}
+
+.banner-slide .slide-7 {
+  background-color:#fb637e;
+}
+
+.banner-slide .swiper-button-prev::after,
+.banner-slide .swiper-button-next::after {
+  display:none;
+}
+
+.banner-slide .swiper-button-prev,
+.banner-slide .swiper-button-next {
+  margin:0 40px;
+}
+
+
+/* event-part */
+
+.event-slide .swiper {
+  height: 500px;
+}
+
+.event-title {
+  text-align:center;
+  padding:100px 0 50px;
+  margin-top:0;
+}
+
+.event-slide li{
+/*   border:3px solid blue; */
+  float:left;
+  width:25%;
+  display:block;
+  box-sizing:border-box;
+}
+
+.event-slid li a {
+/*   display:block; */
+}
+
+.event-slide figure {
+  box-sizing:border-box;
+}
+
+.event-slide figure > img{
+/*   border:3px solid gold; */
+  display:block;
+  width:286px;
+/*   마진말고 이미지를 안으로 들여넣는 방법은? */
+  margin-left:-36px;
+}
+
+.event-slide li span {
+  display:block;
+}
+
+.event-slide .type {
+  margin:22px 0 8px 0;
+}
+
+.event-slide .type > img {
+  vertical-align:top;
+}
+
+.event-slide .title {
+  font-size:17px;
+  font-weight:bold;
+  line-height:23px;
+}
+
+.event-slide .period {
+  margin:11px 0;
+  font-size:13px;
+  color:#948780;
+}
+
+/* br-menu part */
+.br-menu {
+  height:1157px;
+/*   border:3px solid red; */
+  background:url(http://www.baskinrobbins.co.kr/assets/images/main/bg_menu.jpg) 50% 0 no-repeat;           
+}
+
+.br-menu .title {
+  padding-top:78px;
+  text-align:center;
+}
+
+.br-menu .menu-list {
+/*   border:3px solid blue; */
+  height:1066px;
+  background:url(http://www.baskinrobbins.co.kr/assets/images/main/img_menu_list_220729.png) 50% 0 no-repeat;
+  position:relative;
+}
+
+.menu-list .icecream {
+/*   border:3px solid green; */
+  position:absolute;
+  top:50px;
+  left:319px;
+  width:395px;
+  height:302px;
+  cursor:pointer;
+}
+
+.menu-list .icecreamcake {
+/*   border:3px solid green; */
+  position:absolute;
+  top:50px;
+  left:752px;
+  width:276px;
+  height:472px;
+  cursor:pointer;
+}
+
+.menu-list .baverage {
+/*   border:3px solid green; */
+  position:absolute;
+  top:380px;
+  left:117px;
+  width:230px;
+  height:366px;
+  cursor:pointer;
+}
+
+.menu-list .coffee {
+/*   border:3px solid green; */
+  position:absolute;
+  top:380px;
+  left:385px;
+  width:329px;
+  height:292px;
+  cursor:pointer;
+}
+
+.menu-list .dessert {
+/*   border:3px solid green; */
+  position:absolute;
+  top:721px;
+  left:385px;
+  width:329px;
+  height:177px;
+  cursor:pointer;
+}
+
+.menu-list .gift {
+/*   border:3px solid green; */
+  position:absolute;
+  top:560px;
+  left:752px;
+  width:276px;
+  height:183px;
+  cursor:pointer;
+}
+
+/* delivery part */
+.delivery{
+  display:flex;
+  height:547px;
+}
+
+.delivery .title {
+  text-align:center;
+  padding:95px 0 50px;
+}
+
+/* sns-box part */
+
+.sns-box {
+/*   border:3px solid red; */
+}
+
+.sns-box .title {
+  text-align:center;
+  padding-bottom:26px;
+}
+
+.sns ul {
+  text-align:center;
+}
+
+.sns ul li{
+/*   border:3px solid blue; */
+  display:inline-block;
+  padding:0 9px;
+  padding-bottom:35px;
+}
+
+/* footer part */
+
+footer {
+  padding-bottom:60px;
+  border-top:1px solid #feaf2b;
+  min-width:1200px;
+  font-size:14px;
+  letter-spacing:-0.05em;
+  color:#726454;
+}
+
+footer .policy {
+/*   border:3px solid blue; */
+  height:77px;
+  line-height:77px;
+  text-align:center;
+}
+
+footer .policy li {
+  display:inline-block;
+  text-align:center;
+  padding:0 10px;
+}
+
+footer .policy .privacy a {
+  color:#ff7c98;
+  font-weight:bold;
+}
+
+footer .brand-family {
+  background:#f9f8f7;
+  text-align:center;
+}
+
+footer .brand-family__inner {
+  
+}
+footer .brand-family__inner nav {
+  display:inline-block;
+}
+
+footer .brand-family ul {
+  padding:22px;
+}
+
+footer .brand-family li {
+  display:inline-block;
+}
+
+.li-1, .li-2, .li-3 {
+  padding-right:30px;
+}
+
+.li-4, .li-5, .li-6 {
+  padding-right:9px;
+}
+
+footer .family-site {
+  width:150px;
+}
+
+.family-site.hover > ul {
+  display:block;
+}
+
+.family-site > ul > li {
+  padding:5px;
+}
+
+footer .family-site button {
+  width:100%;
+  height:32px;
+/*   left:0; */
+  background:url(http://www.baskinrobbins.co.kr/assets/images/common/family_size_off.png) no-repeat 100% 0;
+  text-align:left;
+  padding-left:11px;
+  background-color:#fff;
+  border:1px solid #d1cecc;
+  border-radius:5px;
+  font-size:11px;
+  color:#b1ab9f;
+  box-shadow:2px 2px 2px 0 rgb(234 233 232 / 80%);
+}
+
+.family-site > ul {
+  display:none;
+  border:1px solid #d1cecc;
+  position:absolute;
+  background-color:#fff;
+  width:105px;
+  border-radius:0 0 5px 5px;
+}
+
+footer .info {
+  padding-top:48px;
+  font-size:11px;
+  color:#635b56;
+}
+
+footer .info h1 {
+  text-align:center;
+}
+
+footer .info .box-1 {
+  display:flex;
+  justify-content:center;
+}
+
+footer .info .box-1 p {
+  padding-right:20px;
+}
+
+footer .info .address {
+  font-style:normal;
+  padding-top:10px;
+}
+
+footer .info .box-2{
+  display:flex;
+  justify-content:center;
+}
+
+footer .info .box-2 p {
+  padding-right:20px;
+  margin-top:-5px;
+}
+
+footer .info .copyright {
+  text-align:center;
+  padding-top:12px;
+  color:#b1adab;
+}
